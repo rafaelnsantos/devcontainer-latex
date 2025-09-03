@@ -1,0 +1,13 @@
+*
+!devcontainer
+!.vscode
+!*.tex
+!main.bib
+!*.png
+!*.pdf
+!*.eps
+!uteis
+!.gitignore
+!abntex2-alf.bst
+!*.md
+!utfpr.cls
