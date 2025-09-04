@@ -1,5 +1,7 @@
 *
-!devcontainer
+!.devcontainer
+!devcontainer.json
+!Dockerfile
 !.vscode
 !*.tex
 !main.bib
