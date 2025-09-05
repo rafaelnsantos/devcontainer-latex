@@ -1,0 +1,22 @@
+name: CI
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: ghcr.io/rafaelnsantos/devcontainer-latex:latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Compile LaTeX document
+        run: |
+          pdflatex -synctex=1 -interaction=nonstopmode -file-line-error -shell-escape main.tex
+          bibtex main
+          pdflatex -synctex=1 -interaction=nonstopmode -file-line-error -shell-escape main.tex
+          pdflatex -synctex=1 -interaction=nonstopmode -file-line-error -shell-escape main.tex
+
+      - name: Upload PDF
+        uses: actions/upload-artifact@v4
+        with:
+          name: main.pdf
