@@ -1,4 +1,6 @@
-FROM ubuntu:22.04
+
+ARG UBUNTU_VERSION=22.04
+FROM ubuntu:${UBUNTU_VERSION}
 
 RUN apt-get update && apt-get -y upgrade
 
