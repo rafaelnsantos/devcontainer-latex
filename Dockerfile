@@ -1,6 +1,6 @@
 FROM ubuntu:22.04
 
-RUN apt-get update
+RUN apt-get update && apt-get -y upgrade
 
 # # Verify git and needed tools are installed
 RUN apt-get -y install --no-install-recommends \
