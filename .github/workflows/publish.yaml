@@ -6,10 +6,6 @@ on:
         description: 'Docker build platform (ex: linux/amd64,linux/arm64)'
         required: false
         default: 'linux/amd64'
-        options:
-          - linux/amd64
-          - linux/arm64
-          - linux/amd64,linux/arm64
       ubuntu_version:
         description: 'Ubuntu version (ex: 22.04, 24.04)'
         required: false
