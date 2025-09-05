@@ -1,6 +1,11 @@
 name: Publish Devcontainer Image
 on:
   workflow_dispatch:
+    inputs:
+      platform:
+        description: 'Docker build platform (ex: linux/amd64,linux/arm64)'
+        required: false
+        default: 'linux/amd64'
 
 env:
   REGISTRY: ghcr.io
@@ -45,7 +50,7 @@ jobs:
           context: .
           file: Dockerfile
           push: true
-          platforms: linux/amd64
+          platforms: ${{ github.event.inputs.platform }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
