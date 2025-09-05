@@ -1,5 +1,6 @@
 {
   "explorer.excludeGitIgnore": true,
+  "latex-workshop.formatting.latex": "latexindent",
   "latex-workshop.latex.tools": [
     {
       "name": "pdflatex",
@@ -18,7 +19,7 @@
       "args": [
         "%DOCFILE%"
       ]
-    },
+    }
   ],
   "latex-workshop.latex.recipes": [
     {

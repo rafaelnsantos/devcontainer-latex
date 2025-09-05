@@ -3,7 +3,12 @@ FROM ubuntu:22.04
 RUN apt-get update && apt-get -y upgrade
 
 # # Verify git and needed tools are installed
-RUN apt-get -y install --no-install-recommends git ghostscript
+RUN apt-get -y install --no-install-recommends \
+    git \
+    ghostscript \
+    chktex \
+    libyaml-tiny-perl \
+    libfile-homedir-perl
 
 # Install Tex Live
 RUN apt-get -y install --no-install-recommends \
