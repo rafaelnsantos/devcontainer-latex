@@ -7,10 +7,15 @@ RUN apt-get update && apt-get -y upgrade
 # # Verify git and needed tools are installed
 RUN apt-get -y install --no-install-recommends \
     git \
+    openssh-client \
+    ca-certificates
+
+RUN apt-get -y install --no-install-recommends \
     ghostscript \
     chktex \
     libyaml-tiny-perl \
-    libfile-homedir-perl
+    libfile-homedir-perl \
+    latexmk
 
 # Install Tex Live
 RUN apt-get -y install --no-install-recommends \
